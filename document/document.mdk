@@ -1,0 +1,173 @@
+[INCLUDE=present.mdk]
+Title         : Demo presentation in Madoko
+Sub Title     : In both HTML and PDF
+Author        : Luigi D'Onofrio
+Affiliation   : ITST G. Marconi
+Email         : luigi.donofrio@iti-marconi.edu.it
+Reveal Theme  : sky
+Beamer Theme  : singapore
+Package       : pstricks
+Package       : pst-plot
+@html .math-inline, .math-display: color=#586e75
+
+
+
+[TITLE]
+
+# Contenuto
+
+[TOC]
+
+# Presentazioni Madoko
+
+Usare [Madoko] per creare magnifiche presentazioni è facile.
+
+* [html][slide]\
+  Viene usata la libreria `Reveal.js` di [Hakim El Hattab](http://hakim.se).\
+  Questa demo in Madoko è una variante della demo online.
+* [pdf][slide-pdf]\
+  Usa il `Beamer` package for LaTeX
+* [source][slide-mdk]\
+  Clicca per vedera il sorgente della presentazione.
+
+
+[madoko]: http://madoko.codeplex.com
+
+## Reveal.js
+
+`reveal.js` è un framework per creare facilmente bellissime presentazioni usando
+HTML. Tutto quello che serve  è un browser. 
+E ogni caratteristica Madoko funziona. Un po' di matematica.
+
+Una famosa equazione è  $e = mc^2 $, ma anche questa cerchiata lo è:
+~ Begin Framed { padding-right=1ex }
+  
+~ Equation  {#eq-gaussian}
+\int_{-\infty}^\infty e^{-a x^2} d x = \sqrt{\frac{\pi}{a}}
+~
+
+~ End Framed
+
+~~ Notes
+Oh hey, queste sono alcune note. Non saranno visibili nella presentazione, ma
+puoi vederle se apri la speaker notes window (tasto 's' sulla tastiera).
+~~
+
+## Code
+
+Codice, evidenziato da Madoko 
+
+``` javascript
+function sqr( x ) {
+  var \(&pi;\) = 3.141593;
+  return x*x;  /* the square */
+}
+```
+Abbiamo usato `\(` and `\)` per uscire da markdown e scrivere &pi;.
+
+<!-- Example of nested vertical slides -->
+~ Begin Vertical { data-background=Gainsboro }
+
+## Slide verticali {#vertical}
+Le slide possono essere annidate in altre slide,
+try pressing [down].
+
+[![arrowdown]][down]
+
+
+[down]: # { .navigate-down }
+[arrowdown]: images/arrow.png "Down arrow" { width=178px height=238px }
+
+## Cantina Livello 1
+Premi down or up per navigare.
+
+## Cantina Livello 2
+Farfalla
+
+[![butterfly]][butterfly]
+
+[butterfly]: images/butterfly.png "Butterfly" { width=280px  }
+[cornify]: http://cornify.com {.test}
+
+
+## Cantinat Livello 3 { data-background=images/butterfly.png }
+That's it, time to go back up.
+
+[![arrowup]][back2]
+
+[arrowup]:  images/arrow.png "Up arrow" { width="178px" height="238px" transform="rotate(180deg)" }
+[back2]: #vertical { .image }
+
+~ End Vertical
+
+
+## Temi {#themes}
+
+Reveal.js ha alcuni temi predefiniti:
+
+* [Default](?#/themes)
+* [Sky](?theme=sky#/themes)
+* [Beige](?theme=beige#/themes)
+* [Serif](?theme=serif#/themes)
+* [Simple](?theme=simple#/themes)
+* [Night](?theme=night#/themes)
+* [Moon](?theme=moon#/themes)
+* [Solarized](?theme=solarized#/themes)
+
+Questi temi sono caricati dopo che la presentazione è stata avviata questo può creare problemi di visualizzazione. In generale il tema viene impostato con `<head>` usando un
+`<link>`.
+
+## Transizioni { #transitions }
+
+You can select from different transitions, like:\
+[Cube](?transition=cube#/transitions) -
+[Page](?transition=page#/transitions) -
+[Concave](?transition=concave#/transitions) -
+[Zoom](?transition=zoom#/transitions) -
+[Linear](?transition=linear#/transitions) -
+[Fade](?transition=fade#/transitions) -
+[None](?transition=none#/transitions) -
+[Default](?#/transitions)
+
+
+
+## Pause?
+
+Alcune pause.
+
+* {.fragment} Uno
+* {.fragment} Due
+* {.fragment} Tre
+
+And more:
+
+- Test 1
+- Test 2
+- Test 3
+{.fragmented}
+
+Fantastico!.
+
+~ Slide
+Una slide senza titolo
+~
+
+
+## Punti di vista
+
+In Reveal.js premi **ESC** per entrare in modalità overview.
+
+Premi alt e clicca su qualsiasi elemento per zoommare usando 
+ [zoom.js]. Alt + e clicca per tornare indietro.
+
+
+[zoom.js]: http://lab.hakim.se/zoom-js
+
+
+## Funziona in Mobile Safari
+
+Provalo! Puoi spostarti tra le slide e ingrandire/rimpicciolire.
+
+[slide]: http://research.microsoft.com/en-us/um/people/daan/madoko/doc/slidedemo.html
+[slide-pdf]: http://research.microsoft.com/en-us/um/people/daan/madoko/doc/slidedemo.pdf
+[slide-mdk]: http://research.microsoft.com/en-us/um/people/daan/madoko/doc/slidedemo.mdk.txt
